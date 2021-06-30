@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { deleteDeck, listDecks } from "../../utils/api";
 
-import AddExamples from "./AddExamples";
 
 function DeckList() {
   const [decks, setDecks] = useState([]);
@@ -57,13 +56,12 @@ function DeckList() {
   ));
 
   return (
-    <>
+    <div>
       <Link to="/decks/new" className="btn btn-secondary">
         <span className="oi oi-plus" /> Create Deck
       </Link>
       <ul className="list-group mt-2 deck-list">{list}</ul>
-      {!decks.length && <AddExamples setDecks={setDecks} />}
-    </>
+    </div>
   );
 }
 
